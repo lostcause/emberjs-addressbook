@@ -1,0 +1,27 @@
+{{outlet}}
+
+<div class="text-center">
+    {{#link-to 'addresses.new' class='btn btn-success btn-lg'}}Add address{{/link-to}}
+</div>
+
+<hr>
+<h3 class="text-center">Addresses</h3>
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="list-unstyled">
+        {{#each model as |address|}}
+            <li class="clearfix address">
+                {{address.name}} - {{address.email}}
+                <div class="pull-right btn-group">
+                    {{#link-to 'addresses.edit' address class='btn btn-info'}}{{fa-icon "pencil"}}{{/link-to}}
+                    <button class="btn btn-danger" {{action 'deleteAddress' address.id}}>{{fa-icon "times"}}</button>
+                </div>
+            </li>
+        {{else}}
+            <li>No addresses found. Add some.</li>
+        {{/each}}
+        </ul>        
+    </div>
+</div>

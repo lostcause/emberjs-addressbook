@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                Add/Edit address
+            </div>
+            <div class="panel-body">    
+                <form {{action 'submit' on='submit'}} class="form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        {{input id='name' placeholder='Enter the contact name' value=singleAddress.name  class='form-control' type='text'}}
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        {{input id='email' placeholder='Enter the contact email addres' type='email' value=singleAddress.email class='form-control'}}
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class='btn btn-success'>Save</button>
+                    </div>
+                </form>
+            {{#if errorMessage}}
+                <div class="alert alert-danger text-center">{{errorMessage}}</div>
+            {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

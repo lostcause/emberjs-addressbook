@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Address book</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+        {{#if session.isAuthenticated}}
+            {{#link-to 'addresses' tagName='li'}}
+                <a style="cursor: pointer">Addresses</a>
+            {{/link-to}}
+            <li>
+                <a {{ action 'invalidateSession' }}>Logout</a>
+            </li>
+        {{else}}
+            {{#link-to 'login' tagName='li'}}
+                <a style="cursor: pointer">Login</a>
+            {{/link-to}}
+            {{#link-to 'register' tagName='li'}}
+                <a style="cursor: pointer">Register</a>
+            {{/link-to}}            
+        {{/if}}
+        </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+
+        {{outlet}}
+
+    </div>
+</div>

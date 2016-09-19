@@ -1,0 +1,16 @@
+body {
+  padding-top: 150px;
+}
+
+.address {
+    border-bottom: solid 1px #eee;
+    padding: 10px;
+}
+
+.address:last-child {
+    border-bottom: none;
+}
+
+.address:hover {
+    background: #efefef;
+}
